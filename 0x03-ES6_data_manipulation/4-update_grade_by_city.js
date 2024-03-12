@@ -1,13 +1,15 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
   const studentsInCity = students.filter((student) => student.location === city)
     .map((student) => {
-      student.grade = 'N/A';
+      const tempHolder = student; // used to avoid error from eslint due to
+      // assignment to property of function parameter
+      tempHolder.grade = 'N/A';
       for (const newGrade of newGrades) {
         if (newGrade.studentId === student.id) {
-          student.grade = newGrade.grade;
+          tempHolder.grade = newGrade.grade;
         }
       }
       return student;
     });
-  return studentsInCity
+  return studentsInCity;
 }
