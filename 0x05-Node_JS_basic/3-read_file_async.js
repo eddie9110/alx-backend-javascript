@@ -13,7 +13,7 @@ function countStudents(path) {
 
       const fields = {};
       for (const i in students) {
-        if (i !== 0) {
+        if (i) {
           if (!fields[students[i][3]]) {
             fields[students[i][3]] = [];
           }
@@ -25,7 +25,8 @@ function countStudents(path) {
       let info;
       const numOfStudents = students.length ? students.length - 1 : 0;
       info = `Number of students: ${numOfStudents}`;
-      const output = [];
+      console.log(info)
+      const output = '';
       output.push(info);
 
       for (const key of Object.keys(fields)) {
