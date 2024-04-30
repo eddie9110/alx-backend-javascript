@@ -25,8 +25,7 @@ function countStudents(path) {
       let info;
       const numOfStudents = students.length ? students.length - 1 : 0;
       info = `Number of students: ${numOfStudents}`;
-      console.log(info)
-      const output = '';
+      const output = [];
       output.push(info);
 
       for (const key of Object.keys(fields)) {
