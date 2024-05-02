@@ -11,6 +11,10 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(1, -3), -2);
   });
 
+  it('it should round the float', () => {
+    assert.equal(calculateNumber(0, 1.2), 1);
+  });
+
   it('testing rounding of  floats', () => {
     assert.strictEqual(calculateNumber(1.2, 2.8), 4);
   });
