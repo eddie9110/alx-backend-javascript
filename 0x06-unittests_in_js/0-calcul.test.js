@@ -12,7 +12,7 @@ describe('calculateNumber', () => {
   });
 
   it('testing rounding of  floats', () => {
-    assert.strictEqual(calculateNumber(1.2, '2.8'), 4);
+    assert.strictEqual(calculateNumber(1.2, 2.8), 4);
   });
 
   it('checking rounding of -ve numbers', () => {
