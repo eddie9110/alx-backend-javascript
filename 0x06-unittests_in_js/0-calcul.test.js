@@ -18,5 +18,4 @@ describe('calculateNumber', () => {
   it('checking rounding of -ve numbers', () => {
     assert.strictEqual(calculateNumber(-1.3, -1.2), -2);
   });
-
 });
