@@ -1,5 +1,8 @@
 const http = require('http');
-const countStudents = require('./3-read_file_async');
+const studentCount = require('./3-read_file_async');
+
+const const args = process.argv.slice(2);
+const data = args[0];
 
 const app = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -11,13 +14,13 @@ const app = http.createServer((req, res) => {
   } else if (url === '/students') {
     res.write('This is the list of our students\n');
     try {
-      const students = countStudents(process.argv[2]);
+      const students = studentCount(data);
       res.end(`${students.join('\n')}`);
-    } catch (error) {
-      res.end(error.message);
+    } catch (err) {
+      res.end(err.message);
     }
   }
-  res.statusCode = 404;
+  //res.statusCode = 404;
   res.end();
 });
 
