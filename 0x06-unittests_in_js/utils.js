@@ -17,6 +17,6 @@ const Utils = {
     }
     return ans;
   }
-}
+};
 
 module.exports = Utils;
