@@ -13,5 +13,6 @@ describe('sendPaymentRequestToApi', () => {
     except(spyConsole.calledOnceWithExactly('SUM', 100, 20)).to.equal(true);
     except(spyCalcNum.withArgs("SUM", 100, 20).calledOnce);
     expect(Utils.calculateNumber('SUM', 100, 20)).to.equal(apiRes);
+    spyCalcNum.restore();
   });
 });
