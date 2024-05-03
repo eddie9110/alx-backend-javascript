@@ -1,18 +1,14 @@
-const mocha = require('mocha');
-const { assert, except } = require('assert');
+const assert = require('assert');
+const Utils = require('./utils')
 const sinon = require('sinon');
 const sendPaymentRequestToApi = require('./3-payment');
-const Utils = require('./utils');
 
 describe('sendPaymentRequestToApi', () => {
   it('should call calculateNumber', () => {
-    const spyCalcNum = sinon.spy(Utils, "calculateNumber");
-    const spyConsole = sinon.spy(console, "log");
-    const apiRes = sendPaymentRequestToApi(100, 20);
-    expect(consoleSpy.calledWithExactly('The total is: 120')).to.equal(true);
-    except(spyConsole.calledOnceWithExactly('SUM', 100, 20)).to.equal(true);
-    except(spyCalcNum.withArgs("SUM", 100, 20).calledOnce);
-    expect(Utils.calculateNumber('SUM', 100, 20)).to.equal(apiRes);
+    const spyCalcNum = sinon.spy(Utils, 'calculateNumber')
+    sendPaymentRequestToApi(100, 20);
+    assert(spyCalcNum.withArgs("The total is: 10").calledOnce);
+    assert(spyCalcNum.withArgs("SUM", 100, 20).calledOnce);
     spyCalcNum.restore();
   });
 });
