@@ -1,4 +1,4 @@
-class Utils {
+const Utils = {
   calculateNumber(type, a, b) {
     let ans = 0;
     const num1 = Math.round(a);
