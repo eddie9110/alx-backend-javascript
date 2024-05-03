@@ -1,7 +1,7 @@
 const http = require('http');
 const studentCount = require('./3-read_file_async');
 
-const const args = process.argv.slice(2);
+const args = process.argv.slice(2);
 const data = args[0];
 
 const app = http.createServer((req, res) => {
@@ -20,7 +20,7 @@ const app = http.createServer((req, res) => {
       res.end(err.message);
     }
   }
-  //res.statusCode = 404;
+  // res.statusCode = 404;
   res.end();
 });
 
